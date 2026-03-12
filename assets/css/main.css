@@ -1729,13 +1729,15 @@ button { font-family: inherit; cursor: pointer; border: none; }
   position: fixed;
   bottom: 2rem;
   inset-inline-end: 2rem;
-  z-index: 999;
+  /* Keep above navbar/mobile menus and most overlays */
+  z-index: 2000;
 }
 
 .chatbot-window {
   position: absolute;
   bottom: 70px;
   inset-inline-end: 0;
+  z-index: 2001;
   width: 380px;
   max-width: calc(100vw - 2rem);
   height: 500px;
