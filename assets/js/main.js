@@ -1098,8 +1098,6 @@ function initSports() {
   grid.innerHTML = sportsData.map(sport => {
     const name = currentLang === 'ar' ? sport.nameAr : sport.nameEn;
     const desc = sport.descAr && sport.descEn ? (currentLang === 'ar' ? sport.descAr : sport.descEn) : (getNestedValue(i18n[currentLang], sport.descKey) || sport.descAr);
-    const coach = sport.coachAr || '';
-    const achievements = (sport.achievements || []).map(a => `<li><i class="fas fa-trophy"></i> ${a}</li>`).join('');
     const img = sport.image || `https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=500&h=350&fit=crop`;
     return `
       <div class="sport-card sport-card-detailed" data-aos="fade-up">
@@ -1110,8 +1108,6 @@ function initSports() {
         <div class="sport-card-body">
           <h3>${name}</h3>
           <p>${desc}</p>
-          ${coach ? `<p class="sport-coach"><i class="fas fa-user"></i> ${currentLang === 'ar' ? 'المدرب:' : 'Coach:'} ${coach}</p>` : ''}
-          ${achievements ? `<ul class="sport-achievements">${achievements}</ul>` : ''}
         </div>
       </div>
     `;
