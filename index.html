@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>اتحاد طلاب جامعة الإسكندرية الأهلية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="الموقع الرسمي لاتحاد طلاب جامعة الإسكندرية الأهلية: أنشطة، فعاليات، أندية، خدمات طلابية ومساعد افتراضي ذكي." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body class="page">
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#home" class="navbar-brand">
+        <div class="navbar-logo">
+          <img src="571217735_821161784183083_11823729130709533_n.jpg" alt="شعار الاتحاد" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="navbar-logo-placeholder" style="display:none;"><i class="fas fa-users"></i></div>
+        </div>
+        <span class="navbar-title" data-i18n="hero.title">اتحاد طلاب جامعة الإسكندرية الأهلية</span>
+      </a>
+      <button class="navbar-toggler" id="navToggler" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="navbar-menu" id="navbarMenu">
+        <li><a href="#home" class="nav-link active" data-i18n="nav.home">الرئيسية</a></li>
+        <li><a href="#about" class="nav-link" data-i18n="nav.about">اتحاد الطلاب</a></li>
+        <li><a href="#activities" class="nav-link" data-i18n="nav.activities">الأنشطة</a></li>
+        <li><a href="#sports" class="nav-link" data-i18n="nav.sports">الفرق الرياضية</a></li>
+        <li><a href="#events" class="nav-link" data-i18n="nav.events">الفعاليات</a></li>
+        <li><a href="#gallery" class="nav-link" data-i18n="nav.gallery">المعرض</a></li>
+        <li><a href="#video" class="nav-link" data-i18n="nav.video">فيديو</a></li>
+        <li><a href="#services" class="nav-link" data-i18n="nav.services">خدمات الطلاب</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav.faq">الأسئلة الشائعة</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
+        <li class="nav-actions">
+          <button class="btn-icon theme-toggle" id="themeToggle" aria-label="تبديل الوضع" title="الوضع الداكن">
+            <i class="fas fa-moon"></i>
+          </button>
+          <button class="btn-lang" id="langToggle" data-lang="ar">English</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&h=1080&fit=crop" alt="" class="hero-bg-img" />
+        <div class="hero-overlay"></div>
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+      </div>
+      <div class="hero-content" data-aos="fade-up">
+        <h1 class="hero-title" data-i18n="hero.title">اتحاد طلاب جامعة الإسكندرية الأهلية</h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">منصة موحدة لخدمة طلابنا وتنمية مهاراتهم وإثراء تجربتهم الجامعية</p>
+        <div class="hero-cta">
+          <a href="#activities" class="btn btn-primary" data-i18n="hero.ctaActivities">الأنشطة</a>
+          <a href="#events" class="btn btn-outline" data-i18n="hero.ctaEvents">الفعاليات</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section section-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+            <i class="fas fa-user-graduate stat-icon"></i>
+            <span class="stat-number" data-target="5000">0</span>
+            <span class="stat-label" data-i18n="stats.students">عدد الطلاب</span>
+          </div>
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-layer-group stat-icon"></i>
+            <span class="stat-number" data-target="15">0</span>
+            <span class="stat-label" data-i18n="stats.clubs">عدد الأندية</span>
+          </div>
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-calendar-alt stat-icon"></i>
+            <span class="stat-number" data-target="50">0</span>
+            <span class="stat-label" data-i18n="stats.events">عدد الفعاليات</span>
+          </div>
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-futbol stat-icon"></i>
+            <span class="stat-number" data-target="8">0</span>
+            <span class="stat-label" data-i18n="stats.teams">عدد الفرق الرياضية</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Announcements Section -->
+    <section class="section section-announcements" id="announcements">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="announcements.title">الإعلانات</h2>
+          <p class="section-subtitle" data-i18n="announcements.subtitle">آخر أخبار وإعلانات اتحاد الطلاب</p>
+        </div>
+        <div class="announcements-grid">
+          <article class="card announcement-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="announcement-badge">مهم</div>
+            <div class="family-activity-card-image" style="margin-bottom:0.75rem;">
+              <img src="iftarramdan.jpg" alt="الإفطار الرمضاني السنوي" loading="lazy" />
+            </div>
+            <h3>الإفطار الرمضاني السنوي</h3>
+            <p>
+              إفطار رمضاني يجمع طلاب جامعة الإسكندرية الأهلية في أجواء روحانية مميزة في الحرم الجامعي بأبيس.
+              عدد المقاعد محدود والحجز مسبق عبر نموذج خدمات الطلاب.
+            </p>
+            <span class="card-date"><i class="far fa-calendar"></i> 2026-03-13</span>
+            <a href="#services" class="announcement-link">احجز مكانك للإفطار <i class="fas fa-arrow-left"></i></a>
+          </article>
+
+          <article class="card announcement-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="announcement-badge badge-sports">رياضي</div>
+            <div class="family-activity-card-image" style="margin-bottom:0.75rem;">
+              <img src="دوره كوره.jpg" alt="الدورة الرمضانية لخماسيات كرة القدم" loading="lazy" />
+            </div>
+            <h3>الدورة الرمضانية لخماسيات كرة القدم</h3>
+            <p>
+              انضم لفريقك في الدورة الرمضانية لخماسيات كرة القدم لطلاب الجامعة. 16 فريق بنظام المجموعات ثم خروج المغلوب،
+              على ملاعب الجامعة في أجواء تنافسية رائعة.
+            </p>
+            <span class="card-date"><i class="far fa-calendar"></i> 2026-03-15</span>
+            <a href="#events" class="announcement-link">تفاصيل البطولة والتسجيل <i class="fas fa-arrow-left"></i></a>
+          </article>
+
+          <article class="card announcement-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="announcement-badge badge-academic">أكاديمي</div>
+            <h3>فرص تطوعية ولجان تنظيم</h3>
+            <p>
+              إذا حابب تشارك في تنظيم الفعاليات القادمة (الإفطار، الدورة الرمضانية، والأنشطة الأخرى)،
+              سجل كمتطوع في لجنة التنظيم من خلال نموذج "تسجيل نشاط".
+            </p>
+            <span class="card-date"><i class="far fa-calendar"></i> 2026-03-01</span>
+            <a href="#services" class="announcement-link">سجل كمتطوع <i class="fas fa-arrow-left"></i></a>
+          </article>
+
+          <article class="card announcement-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="announcement-badge badge-social">اجتماعي</div>
+            <h3>تابع كل الفعاليات القادمة</h3>
+            <p>
+              يمكنك متابعة كل الفعاليات القادمة من خلال تقويم الفعاليات في القسم التالي، مع إمكانية البحث والتسجيل مباشرة
+              من خلال الموقع.
+            </p>
+            <span class="card-date"><i class="far fa-calendar"></i> 2026-03-01</span>
+            <a href="#events" class="announcement-link">اذهب إلى تقويم الفعاليات <i class="fas fa-arrow-left"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section (Home) -->
+    <section class="section section-events" id="events">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="events.title">الفعاليات القادمة</h2>
+          <p class="section-subtitle" data-i18n="events.subtitle">استكشف الفعاليات والأنشطة المقبلة</p>
+        </div>
+        <div class="events-search" data-aos="fade-up">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="eventSearch" placeholder="بحث..." data-i18n-placeholder="events.search" />
+          </div>
+        </div>
+
+        <!-- Calendar view for events -->
+        <div class="events-calendar" id="eventCalendar">
+          <!-- Populated by JS (calendar of events) -->
+        </div>
+
+        <div class="events-grid" id="eventsGrid">
+          <!-- Events populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- About Union Section -->
+    <section class="section section-about" id="about">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="about.title">اتحاد الطلاب</h2>
+        </div>
+        <div class="about-grid">
+          <div class="card about-card" data-aos="fade-up" data-aos-delay="0">
+            <i class="fas fa-info-circle about-icon"></i>
+            <h3 data-i18n="about.brief">نبذة عن اتحاد الطلاب</h3>
+            <p data-i18n="about.briefText">اتحاد طلاب جامعة الإسكندرية الأهلية هو الهيئة التمثيلية للطلاب...</p>
+          </div>
+          <div class="card about-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-eye about-icon"></i>
+            <h3 data-i18n="about.vision">الرؤية</h3>
+            <p data-i18n="about.visionText">أن نكون الاتحاد الرائد...</p>
+          </div>
+          <div class="card about-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-bullseye about-icon"></i>
+            <h3 data-i18n="about.mission">الرسالة</h3>
+            <p data-i18n="about.missionText">تمثيل الطلاب والدفاع عن حقوقهم...</p>
+          </div>
+          <div class="card about-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-sitemap about-icon"></i>
+            <h3 data-i18n="about.structure">الهيكل التنظيمي</h3>
+            <p data-i18n="about.structureText">يتكون الاتحاد من اللجنة التنفيذية...</p>
+          </div>
+        </div>
+        <div class="patronage-banner" data-aos="fade-up">
+          <div class="patronage-photo">
+            <img src="images/496708309_703261855973077_8216036093532045816_n.jpg" alt="الأستاذ الدكتور تامر حلمي - مستشار اتحاد الطلاب" />
+          </div>
+          <p>تحت رعاية <strong>الأستاذ الدكتور / تامر حلمى</strong> مستشار اتحاد الطلاب</p>
+          <p class="patronage-sub">Under the patronage of <strong>Prof. Dr. Tamer Helmy</strong> – Student Union Advisor</p>
+        </div>
+        <div class="section-header" data-aos="fade-up">
+          <h3 class="section-subtitle" data-i18n="about.boardTitle">مجلس اتحاد الطلاب للعام الجامعي ٢٠٢٤-٢٠٢٥</h3>
+          <p data-i18n="about.boardSubtitle">نتيجة انتخابات مجلس الاتحاد</p>
+        </div>
+        <div class="board-grid" id="boardGrid">
+          <!-- Populated by JS -->
+        </div>
+        <div class="board-thanks" data-aos="fade-up">
+          <p>نوجه الشكر لطلاب جامعة الإسكندرية الأهلية على ثقتكم، ونعدكم أننا سنعمل جاهدين لنكون جديرين بهذه الثقة. والله الموفق والمستعان.</p>
+          <p class="thanks-en">We thank Alexandria National University students for their trust, and we promise to work hard to be worthy of it.</p>
+        </div>
+        <div class="section-header" style="margin-top:3rem;">
+          <h3 class="section-title" style="font-size:1.4rem;">اللجان</h3>
+        </div>
+        <div class="committees-grid" id="committeesGrid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities / Clubs Section -->
+    <section class="section section-clubs" id="activities">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="clubs.title">الأندية والأنشطة</h2>
+          <p class="section-subtitle" data-i18n="clubs.subtitle">انضم إلى أحد أنديتنا وطور مهاراتك</p>
+        </div>
+        <div class="clubs-grid" id="clubsGrid">
+          <!-- Clubs populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sports Teams Section -->
+    <section class="section section-sports" id="sports">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="sports.title">الفرق الرياضية</h2>
+          <p class="section-subtitle" data-i18n="sports.subtitle">فرقنا الرياضية وإنجازاتها</p>
+        </div>
+        <div class="sports-grid" id="sportsGrid">
+          <!-- Sports populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section section-gallery" id="gallery">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="gallery.title">المعرض</h2>
+          <p class="section-subtitle" data-i18n="gallery.subtitle">لقطات من أنشطتنا وفعالياتنا</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Gallery populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section section-video" id="video">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">فيديو الاتحاد</h2>
+          <p class="section-subtitle">لقطات من فعالياتنا وأنشطتنا</p>
+        </div>
+        <div class="video-grid" data-aos="fade-up">
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/9xwazD5SyVg" title="اتحاد الطلاب - فيديو تعريفي" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h4>حفل افتتاح العام الدراسي 2024-2025</h4>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/2L2lnxJ0PqE" title="أنشطة طلابية" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h4>بطولة كرة القدم بين الكليات</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="section section-faq" id="faq">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">الأسئلة الشائعة</h2>
+          <p class="section-subtitle">إجابات على الأسئلة الأكثر تردداً من الطلاب</p>
+        </div>
+        <div class="faqs-container" id="faqsContainer">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+      <p class="lightbox-title" id="lightboxTitle"></p>
+      <img src="" alt="" id="lightboxImg" />
+    </div>
+
+    <!-- Student Services Section -->
+    <section class="section section-services" id="services">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="services.title">خدمات الطلاب</h2>
+          <p class="section-subtitle" data-i18n="services.subtitle">نماذج رقمية لخدمتك</p>
+        </div>
+        <div class="services-tabs" data-aos="fade-up">
+          <button class="service-tab active" data-form="activity" data-i18n="services.activityReg">تسجيل نشاط</button>
+          <button class="service-tab" data-form="complaint" data-i18n="services.complaint">تقديم شكوى</button>
+          <button class="service-tab" data-form="suggestion" data-i18n="services.suggestion">تقديم اقتراح</button>
+          <button class="service-tab" data-form="eventReg" data-i18n="services.eventReg">التسجيل في فعالية</button>
+        </div>
+        <div class="services-forms">
+          <form class="service-form active" id="formActivity">
+            <h3 data-i18n="services.activityReg">تسجيل نشاط</h3>
+            <p data-i18n="services.activityRegDesc">تسجيل نشاط أو مبادرة طلابية جديدة</p>
+            <input type="text" name="name" placeholder="الاسم" required data-i18n-placeholder="contact.name" />
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required data-i18n-placeholder="contact.email" />
+            <input type="text" name="activity" placeholder="اسم النشاط" required />
+            <textarea name="description" placeholder="وصف النشاط" required></textarea>
+            <button type="submit" class="btn btn-primary" data-i18n="services.submit">إرسال</button>
+          </form>
+          <form class="service-form" id="formComplaint">
+            <h3 data-i18n="services.complaint">تقديم شكوى</h3>
+            <p data-i18n="services.complaintDesc">تقديم شكوى رسمية للاتحاد</p>
+            <input type="text" name="name" placeholder="الاسم" required data-i18n-placeholder="contact.name" />
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required data-i18n-placeholder="contact.email" />
+            <input type="text" name="subject" placeholder="الموضوع" required data-i18n-placeholder="contact.subject" />
+            <textarea name="message" placeholder="تفاصيل الشكوى" required></textarea>
+            <button type="submit" class="btn btn-primary" data-i18n="services.submit">إرسال</button>
+          </form>
+          <form class="service-form" id="formSuggestion">
+            <h3 data-i18n="services.suggestion">تقديم اقتراح</h3>
+            <p data-i18n="services.suggestionDesc">اقتراح أفكار أو تحسينات</p>
+            <input type="text" name="name" placeholder="الاسم" required data-i18n-placeholder="contact.name" />
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required data-i18n-placeholder="contact.email" />
+            <textarea name="suggestion" placeholder="اقتراحك" required></textarea>
+            <button type="submit" class="btn btn-primary" data-i18n="services.submit">إرسال</button>
+          </form>
+          <form class="service-form" id="formEventReg">
+            <h3 data-i18n="services.eventReg">التسجيل في فعالية</h3>
+            <p data-i18n="services.eventRegDesc">التسجيل للمشاركة في فعالية</p>
+            <input type="text" name="name" placeholder="الاسم" required data-i18n-placeholder="contact.name" />
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required data-i18n-placeholder="contact.email" />
+            <input type="tel" name="phone" placeholder="رقم الهاتف" required />
+            <select name="event" required>
+              <option value="">اختر الفعالية</option>
+              <!-- Populated by JS -->
+            </select>
+            <button type="submit" class="btn btn-primary" data-i18n="services.submit">إرسال</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Resources -->
+    <section class="section section-resources">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title">معلومات مهمة للطلاب</h2>
+          <p class="section-subtitle">روابط وموارد تهمك</p>
+        </div>
+        <div class="resources-grid" data-aos="fade-up">
+          <a href="#services" class="resource-card">
+            <i class="fas fa-file-alt"></i>
+            <h4>النماذج الرقمية</h4>
+            <p>تسجيل نشاط، شكوى، اقتراح، حجز فعالية</p>
+          </a>
+          <a href="#events" class="resource-card">
+            <i class="fas fa-calendar-check"></i>
+            <h4>التقويم الأكاديمي</h4>
+            <p>مواعيد الفعاليات والأنشطة</p>
+          </a>
+          <a href="#activities" class="resource-card">
+            <i class="fas fa-user-plus"></i>
+            <h4>انضم لنادي</h4>
+            <p>التسجيل في الأندية الطلابية</p>
+          </a>
+          <a href="mailto:students.union@anu.edu.eg" class="resource-card">
+            <i class="fas fa-envelope"></i>
+            <h4>البريد الرسمي</h4>
+            <p>students.union@anu.edu.eg</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-contact" id="contact">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2 class="section-title" data-i18n="contact.title">تواصل معنا</h2>
+          <p class="section-subtitle" data-i18n="contact.subtitle">نحن هنا لمساعدتك</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info" data-aos="fade-right">
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span data-i18n="contact.address">جامعة الإسكندرية الأهلية - سموحة الجديدة</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:students.union@anu.edu.eg">students.union@anu.edu.eg</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+2031234567">+20 3 123 4567</a>
+            </div>
+            <div class="contact-social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <form class="contact-form card" id="contactForm" data-aos="fade-left">
+            <input type="text" name="name" placeholder="الاسم" required data-i18n-placeholder="contact.name" />
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required data-i18n-placeholder="contact.email" />
+            <input type="text" name="subject" placeholder="الموضوع" required data-i18n-placeholder="contact.subject" />
+            <textarea name="message" placeholder="الرسالة" required data-i18n-placeholder="contact.message"></textarea>
+            <button type="submit" class="btn btn-primary" data-i18n="contact.send">إرسال</button>
+          </form>
+        </div>
+        <div class="contact-map" data-aos="fade-up">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.0061274042165!2d29.9514!3d31.2006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDEyJzAyLjIiTiAyOcKwNTcnMDUuMCJF!5e0!3m2!1sen!2seg!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع الجامعة"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="navbar-logo">
+            <img src="571217735_821161784183083_11823729130709533_n.jpg" alt="شعار" onerror="this.style.display='none'" />
+          </div>
+          <p data-i18n="footer.copyright">© اتحاد طلاب جامعة الإسكندرية الأهلية. جميع الحقوق محفوظة.</p>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer.quickLinks">روابط سريعة</h4>
+          <a href="#home">الرئيسية</a>
+          <a href="#about">اتحاد الطلاب</a>
+          <a href="#activities">الأنشطة</a>
+          <a href="#events">الفعاليات</a>
+          <a href="#contact">تواصل</a>
+        </div>
+        <div class="footer-contact">
+          <h4 data-i18n="footer.contact">تواصل</h4>
+          <a href="mailto:students.union@anu.edu.eg"><i class="fas fa-envelope"></i> students.union@anu.edu.eg</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Chatbot -->
+  <div class="chatbot-wrapper">
+    <div class="chatbot-window" id="chatbotWindow">
+      <div class="chatbot-header">
+        <h4 data-i18n="chatbot.title">مساعد الطالب</h4>
+        <button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="chat-msg bot">
+          <p>مرحباً! أنا مساعدك الجامعي. أسألني عن الأنشطة، الفعاليات، الأندية أو خدمات الطلاب.</p>
+        </div>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="اكتب رسالتك..." data-i18n-placeholder="chatbot.placeholder" />
+        <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+      </div>
+      <span class="chatbot-powered" data-i18n="chatbot.poweredBy">مدعوم بـ Groq AI</span>
+    </div>
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="فتح المحادثة">
+      <i class="fas fa-comments"></i>
+    </button>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
