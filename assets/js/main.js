@@ -1001,9 +1001,8 @@ function initEvents() {
     if (loadMoreWrapper && loadMoreBtn) {
       if (filtered.length > MAX_EVENTS) {
         loadMoreWrapper.style.display = 'block';
-        const showMoreText = currentLang === 'ar' ? 'عرض المزيد' : 'Show more';
-        const showLessText = currentLang === 'ar' ? 'عرض أقل' : 'Show less';
-        loadMoreBtn.textContent = eventsShowAll ? showLessText : showMoreText;
+        const label = eventsShowAll ? 'عرض أقل' : 'عرض المزيد';
+        loadMoreBtn.textContent = label;
       } else {
         loadMoreWrapper.style.display = 'none';
       }
@@ -1186,9 +1185,8 @@ function initGallery() {
     if (loadMoreWrapper && loadMoreBtn) {
       if (galleryImages.length > PAGE_SIZE) {
         loadMoreWrapper.style.display = 'block';
-        const showMoreText = currentLang === 'ar' ? 'عرض المزيد' : 'Show more';
-        const showLessText = currentLang === 'ar' ? 'عرض أقل' : 'Show less';
-        loadMoreBtn.textContent = galleryShowAll ? showLessText : showMoreText;
+        const label = galleryShowAll ? 'عرض أقل' : 'عرض المزيد';
+        loadMoreBtn.textContent = label;
       } else {
         loadMoreWrapper.style.display = 'none';
       }
