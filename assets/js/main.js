@@ -726,6 +726,8 @@ const committeesData = [
 let currentLang = localStorage.getItem('lang') || 'ar';
 let currentTheme = localStorage.getItem('theme') || 'light';
 let chatbotHistory = [];
+let eventsShowAll = false;
+let galleryShowAll = false;
 
 // ========== DOM Ready ==========
 document.addEventListener('DOMContentLoaded', () => {
@@ -945,9 +947,12 @@ function initEvents() {
   const grid = document.getElementById('eventsGrid');
   const searchInput = document.getElementById('eventSearch');
   const calendar = document.getElementById('eventCalendar');
+  const loadMoreWrapper = document.getElementById('eventsLoadMoreWrapper');
+  const loadMoreBtn = document.getElementById('eventsLoadMoreBtn');
   if (!grid) return;
 
   function renderEvents(filter = '') {
+    const MAX_EVENTS = 6;
     const term = filter.toLowerCase();
     const filtered = eventsData.filter(ev => {
       const title = currentLang === 'ar' ? ev.titleAr : ev.titleEn;
@@ -957,10 +962,13 @@ function initEvents() {
 
     if (filtered.length === 0) {
       grid.innerHTML = `<p class="section-subtitle" style="grid-column:1/-1;text-align:center;">${i18n[currentLang]?.events?.noEvents || 'لا توجد فعاليات'}</p>`;
+      if (loadMoreWrapper) loadMoreWrapper.style.display = 'none';
       return;
     }
 
-    grid.innerHTML = filtered.map(ev => {
+    const visible = eventsShowAll ? filtered : filtered.slice(0, MAX_EVENTS);
+
+    grid.innerHTML = visible.map(ev => {
       const title = currentLang === 'ar' ? ev.titleAr : ev.titleEn;
       const desc = currentLang === 'ar' ? ev.descAr : ev.descEn;
       const loc = currentLang === 'ar' ? ev.locationAr : ev.locationEn;
@@ -989,6 +997,17 @@ function initEvents() {
         </article>
       `;
     }).join('');
+
+    if (loadMoreWrapper && loadMoreBtn) {
+      if (filtered.length > MAX_EVENTS) {
+        loadMoreWrapper.style.display = 'block';
+        const showMoreText = currentLang === 'ar' ? 'عرض المزيد' : 'Show more';
+        const showLessText = currentLang === 'ar' ? 'عرض أقل' : 'Show less';
+        loadMoreBtn.textContent = eventsShowAll ? showLessText : showMoreText;
+      } else {
+        loadMoreWrapper.style.display = 'none';
+      }
+    }
 
     AOS?.refresh();
   }
@@ -1043,6 +1062,13 @@ function initEvents() {
   if (searchInput) {
     searchInput.addEventListener('input', (e) => renderEvents(e.target.value));
     searchInput.placeholder = i18n[currentLang]?.events?.search || 'بحث...';
+  }
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      eventsShowAll = !eventsShowAll;
+      renderEvents(searchInput ? searchInput.value : '');
+    });
   }
 }
 
@@ -1123,31 +1149,63 @@ function initGallery() {
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
   const lightboxTitle = document.getElementById('lightboxTitle');
+  const loadMoreWrapper = document.getElementById('galleryLoadMoreWrapper');
+  const loadMoreBtn = document.getElementById('galleryLoadMoreBtn');
   if (!grid) return;
 
-  grid.innerHTML = galleryImages.map((img, i) => {
-    const title = currentLang === 'ar' ? img.titleAr : img.titleEn;
-    return `
-      <div class="gallery-item" data-aos="fade-up" data-index="${i}">
-        <img src="${img.thumb}" alt="${title}" loading="lazy" />
-        <div class="gallery-overlay"><span>${title}</span></div>
-      </div>
-    `;
-  }).join('');
+  const PAGE_SIZE = 9;
 
-  grid.querySelectorAll('.gallery-item').forEach((item, i) => {
-    item.addEventListener('click', () => {
-      if (lightbox && lightboxImg) {
-        lightboxImg.src = galleryImages[i].full;
-        lightboxImg.alt = galleryImages[i].titleAr;
-        if (lightboxTitle) lightboxTitle.textContent = currentLang === 'ar' ? galleryImages[i].titleAr : galleryImages[i].titleEn;
-        lightbox.classList.add('active');
-      }
+  function renderGallery() {
+    const visible = galleryShowAll ? galleryImages : galleryImages.slice(0, PAGE_SIZE);
+
+    grid.innerHTML = visible.map(img => {
+      const title = currentLang === 'ar' ? img.titleAr : img.titleEn;
+      return `
+        <div class="gallery-item" data-aos="fade-up">
+          <img src="${img.thumb}" alt="${title}" loading="lazy" />
+          <div class="gallery-overlay"><span>${title}</span></div>
+        </div>
+      `;
+    }).join('');
+
+    const items = grid.querySelectorAll('.gallery-item');
+    items.forEach((item, i) => {
+      const imgData = visible[i];
+      item.addEventListener('click', () => {
+        if (lightbox && lightboxImg && imgData) {
+          lightboxImg.src = imgData.full;
+          lightboxImg.alt = imgData.titleAr;
+          if (lightboxTitle) {
+            lightboxTitle.textContent = currentLang === 'ar' ? imgData.titleAr : imgData.titleEn;
+          }
+          lightbox.classList.add('active');
+        }
+      });
     });
-  });
+
+    if (loadMoreWrapper && loadMoreBtn) {
+      if (galleryImages.length > PAGE_SIZE) {
+        loadMoreWrapper.style.display = 'block';
+        const showMoreText = currentLang === 'ar' ? 'عرض المزيد' : 'Show more';
+        const showLessText = currentLang === 'ar' ? 'عرض أقل' : 'Show less';
+        loadMoreBtn.textContent = galleryShowAll ? showLessText : showMoreText;
+      } else {
+        loadMoreWrapper.style.display = 'none';
+      }
+    }
+  }
+
+  renderGallery();
 
   if (lightboxClose) lightboxClose.addEventListener('click', () => lightbox?.classList.remove('active'));
   lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      galleryShowAll = !galleryShowAll;
+      renderGallery();
+    });
+  }
 }
 
 // ========== FAQs ==========

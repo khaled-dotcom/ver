@@ -546,6 +546,16 @@ button { font-family: inherit; cursor: pointer; border: none; }
   gap: 1.5rem;
 }
 
+.section-load-more {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-load-more {
+  min-width: 160px;
+  font-size: 0.95rem;
+}
+
 /* Simple vertical calendar under events */
 .events-calendar {
   margin-top: 1.5rem;
