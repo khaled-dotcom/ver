@@ -536,30 +536,8 @@ const clubsData = [
     icon: 'fa-laptop-code',
     nameAr: 'أسرة Pivots – حاسبات وعلوم وعلوم بيانات',
     nameEn: 'Pivots CS & Data Family',
-    descAr: `إحدى أقوى الأسر في كليات الحاسبات وعلوم البيانات والعلوم، تركز على البرمجة، الذكاء الاصطناعي، المسابقات التقنية والمشروعات العملية.
-
-الهيكل القيادي:
-KHALED GHALWASH – President
-AHMED SABRY – Media Head
-AHMED GHAZAL – Media Co-Head
-MARWAN KHALED – PR & HR Head
-RAWAN MOHAMED – OC Head
-MOSTAFA ELSAYED – Educational Head
-ZEYAD MOHAMED – Educational Co-Head
-AHMED METWALLY – Entertainment Head
-MOHAMED HANY – Entertainment Co-Head`,
-    descEn: `One of the strongest families for Computer Science, Data Science and Science students, focusing on programming, AI, tech competitions and hands-on projects.
-
-Leadership structure:
-KHALED GHALWASH – President
-AHMED SABRY – Media Head
-AHMED GHAZAL – Media Co-Head
-MARWAN KHALED – PR & HR Head
-RAWAN MOHAMED – OC Head
-MOSTAFA ELSAYED – Educational Head
-ZEYAD MOHAMED – Educational Co-Head
-AHMED METWALLY – Entertainment Head
-MOHAMED HANY – Entertainment Co-Head`,
+    descAr: 'أسرة طلابية متخصصة لطلبة الحاسبات وعلوم البيانات والعلوم، تركّز على البرمجة، الذكاء الاصطناعي، المسابقات التقنية، وورش العمل العملية التي تجهّز الطلاب لسوق العمل.',
+    descEn: 'A focused student family for Computer Science, Data Science and Science students, centered on programming, AI, tech competitions, and practical workshops that prepare students for the job market.',
     image: 'pivots.jpg',
     presidentAr: '',
     presidentEn: '',
@@ -1389,6 +1367,50 @@ function initChatbot() {
   toggle.addEventListener('click', () => windowEl.classList.toggle('open'));
   closeBtn?.addEventListener('click', () => windowEl.classList.remove('open'));
 
+   // Quick suggestion chips to guide users
+  const suggestions = [
+    {
+      ar: 'ما هي أقرب فعالية قادمة؟',
+      en: 'What are the upcoming events?'
+    },
+    {
+      ar: 'عايز انضم لنادي طلابي مناسب ليا.',
+      en: 'I want to join a suitable student club.'
+    },
+    {
+      ar: 'إزاي أسجل شكوى أو اقتراح؟',
+      en: 'How can I submit a complaint or suggestion?'
+    },
+    {
+      ar: 'ما هي الفرق الرياضية المتاحة؟',
+      en: 'What sports teams are available?'
+    }
+  ];
+
+  const suggestionsContainer = document.createElement('div');
+  suggestionsContainer.className = 'chatbot-suggestions';
+  const list = document.createElement('div');
+  list.className = 'chatbot-suggestions-list';
+
+  suggestions.forEach(s => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chatbot-suggestion';
+    btn.textContent = currentLang === 'ar' ? s.ar : s.en;
+    btn.addEventListener('click', () => {
+      if (!input) return;
+      input.value = currentLang === 'ar' ? s.ar : s.en;
+      sendMessage();
+    });
+    list.appendChild(btn);
+  });
+
+  suggestionsContainer.appendChild(list);
+  const powered = document.querySelector('.chatbot-powered');
+  if (powered && powered.parentNode) {
+    powered.parentNode.insertBefore(suggestionsContainer, powered);
+  }
+
   async function sendMessage() {
     const text = input?.value?.trim();
     if (!text) return;
@@ -1443,8 +1465,8 @@ async function fetchGroq(userMessage) {
   }
 
   const systemPrompt = currentLang === 'ar'
-    ? 'أنت مساعد طلاب جامعة الإسكندرية الأهلية. أجب عن أسئلة الطلاب حول الأنشطة، الفعاليات، الأندية، الفرق الرياضية وخدمات الطلاب. كن مفيداً وودوداً ومحترفاً.'
-    : 'You are the student assistant for Alexandria National University. Answer questions about activities, events, clubs, sports teams and student services. Be helpful, friendly and professional.';
+    ? 'أنت المساعد الافتراضي الرسمي لاتحاد طلاب جامعة الإسكندرية الأهلية. اتكلم مع الطلبة باللهجة المصرية البسيطة، بأسلوب رايق وصريح. مهمتك تشرح لهم بسرعة هم يقدروا يعملوا إيه من خلال الموقع: الأقسام المختلفة، الفعاليات (الحالية والسابقة)، الأندية والأسر، الفرق الرياضية، والخدمات الإلكترونية زي تسجيل نشاط أو شكوى أو اقتراح أو تسجيل في فعالية. خليك دايمًا مختصر: من ٢ لـ ٣ جُمل في أغلب الردود، إلا لو الطالب طلب تفاصيل كتير. اقترح عليهم أقسام أو لينكات جوّه الموقع تساعدهم، وخلي إجاباتك سهلة القراءة على الموبايل.'
+    : 'You are the official virtual assistant for the Alexandria National University Student Union. Keep answers short (usually 2–3 sentences) and very clear, and only go longer when the user explicitly asks for detailed explanations. Speak in a friendly, conversational tone, help students quickly understand what they can do on this site (sections, events, clubs/families, sports teams, digital services, and contacts), and suggest the most relevant sections or actions inside the site. Always reply in the same language as the user.';
 
   const messages = [
     { role: 'system', content: systemPrompt },
