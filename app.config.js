@@ -8,7 +8,7 @@
  */
 const CONFIG = {
   // For local testing only. In production, leave this empty and use a backend proxy.
-  GROQ_API_KEY: '',
+  GROQ_API_KEY: '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',
   GROQ_API_URL: 'https://api.groq.com/openai/v1/chat/completions',
   GROQ_MODEL: 'openai/gpt-oss-120b'
 };
